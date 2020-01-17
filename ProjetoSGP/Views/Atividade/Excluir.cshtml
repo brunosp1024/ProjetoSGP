@@ -1,0 +1,97 @@
+﻿@model ProjetoSGP.Models.Atividade
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir Atividade</h2>
+
+<div>
+    <h4>Você tem certeza que quer excluir esta Atividade?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdAtividade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdAtividade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataTermino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataTermino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recurso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Projeto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Projeto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <hr />
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            <button class="btn btn-default">@Html.ActionLink("Cancelar", "Index")</button>
+        </div>
+    }
+</div>
+
+<style>
+    dl dd {
+        color: black;
+        text-align: left;
+    }
+</style>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Projetos</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/estilo.css" media="screen" />
+
+    @Styles.Render("~/Content/kendo/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Scripts.Render("~/bundles/customScript")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+</head>
+<body style="margin: 0; background:#E6E6E6">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background: #000000">
+
+        <div class="container">
+            <h3 style="text-align: center; color: #fff">Projeto SGP</h3>
+        </div>
+    </div>
+
+    <div class="menu">
+        <!--ìcone de acesso do menu lateral-->
+        <div id="barra-lateral">
+            <div id="logo-menu">
+                <img src="~/Content/imagens/menu.png" />
+            </div>
+
+            <!--Itens de menu-->
+            <div class="menu-item">
+                <div class="item">
+                    @Html.ActionLink("Início", "Index", "Home")
+                </div>
+                <div class="item">
+                    @Html.ActionLink("Recursos", "Index", "Recurso")
+                </div>
+                <div class="item">
+                    @Html.ActionLink("Projetos", "Index", "Projeto")
+                </div>
+            </div>
+        </div>
+
+        <div id="conteudo-principal">
+            @RenderBody()
+        </div>
+
+        <footer id="rodape">
+            <p style="color: #6d6d6d">&copy; @DateTime.Now.Year - Bruno Salvador</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+<style>
+    #conteudo-principal {
+        width: 870px;
+        height: 600px;
+        margin: 15px auto;
+        background: #fff;
+        text-align: center;
+        padding: 10px;
+        color: #000000;
+    }
+
+    #rodape {
+        width: auto;
+        text-align: center;
+        line-height: 20px;
+        margin: 150px auto 0 auto;
+        padding-top: 20px;
+        border-top: 1px solid #cfcfcf;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: verdana;
+        color: #bcbcbc;
+    }
+
+    /*menu lateral*/
+
+    div#barra-lateral {
+        position: fixed;
+        top: 57px;
+        margin-bottom: 10px;
+        width: 65px;
+        height: 100%;
+        background-color: #000000;
+        overflow: hidden;
+        -webkit-transition: width 0.5s cubic-bezier(.61,.01,.37,1);
+    }
+
+        div#barra-lateral:hover {
+            width: 230px;
+        }
+
+    #barra-lateral a:hover {
+        cursor: pointer;
+        text-decoration: none;
+        color: #0026ff;
+    }
+
+        #logo-menu {
+        margin: 10px;
+        float: left;
+    }
+
+    .menu-item {
+        margin: 0 0 0 80px;
+        float:left;
+    }
+
+    div.item {
+        margin-bottom: 20px;
+        width: 130px;
+        height: 40px;
+        float: left;
+    }
+
+</style>

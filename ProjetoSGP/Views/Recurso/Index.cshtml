@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ProjetoSGP.Models.Recurso>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<button class="btn btn-default flutuar">@Html.ActionLink("+ Novo Recurso", "Cadastrar")</button>
+<h2>Lista dos Recursos</h2>
+
+<div class="tabela">
+    <table class="table table-condensed table-hover">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdRecurso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td style="text-decoration:none">
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.IdRecurso }) |
+                    @Html.ActionLink("Detalhes", "Detalhar", new { id = item.IdRecurso }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.IdRecurso })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+
+<hr />
+
+<div>
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "Index", "Home")</button>
+</div>
+
+<style>
+
+    .tabela {
+        width: 850px;
+        height: 380px;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 40px auto -5px auto;
+    }
+
+    tr th, tr td {
+        color: black;
+        text-align: left;
+    }
+
+
+    .flutuar {
+        float: left;
+        margin-bottom: 5px;
+        position: relative;
+        top: 50px;
+    }
+
+    h2 {
+         position: relative;
+         margin-right: 60px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+   
+</style>
+
+
+

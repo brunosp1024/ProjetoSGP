@@ -1,0 +1,94 @@
+﻿@model IEnumerable<ProjetoSGP.Models.Atividade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<button class="btn btn-default flutuar">@Html.ActionLink("+ Nova atividade", "Cadastrar")</button>
+<h2>Lista de Atividades</h2>
+
+<div class="tabela">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAtividade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Projeto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            string alerta = item.Status;
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAtividade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recurso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Projeto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.IdAtividade }) |
+                    @Html.ActionLink("Detalhes", "Detalhar", new { id = item.IdAtividade }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.IdAtividade })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<hr />
+
+<div>
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "Index", "Home")</button>
+</div>
+
+
+<style>
+
+    .tabela {
+        width: 850px;
+        height: 380px;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 40px auto -5px auto;
+    }
+
+    tr th, tr td {
+        color: black;
+        text-align: left;
+    }
+
+    .flutuar {
+        float: left;
+        margin-bottom: 5px;
+        position: relative;
+        top: 50px;
+    }
+
+    h2 {
+        position: relative;
+        margin-right: 100px;
+    }
+</style>

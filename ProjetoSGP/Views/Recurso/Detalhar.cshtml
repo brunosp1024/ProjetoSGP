@@ -1,0 +1,65 @@
+﻿@model ProjetoSGP.Models.Recurso
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Detalhes do Recurso</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdRecurso)
+        </dt>
+
+        <dd >
+            @Html.DisplayFor(model => model.IdRecurso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+    </dl>
+</div>
+
+<hr />
+
+<p>
+    <button class="btn btn-default">@Html.ActionLink("Editar", "Editar", new {id = Model.IdRecurso})</button> |
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "Index")</button>
+</p>
+
+<style>
+    dl dd {
+        color: black;
+    }
+
+   dl dd {
+        text-align: left;
+    }
+
+</style>
+
+

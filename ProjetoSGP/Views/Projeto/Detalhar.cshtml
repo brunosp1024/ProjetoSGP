@@ -1,0 +1,88 @@
+﻿@model ProjetoSGP.Models.Projeto
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Detalhes do Projeto</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdProjeto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdProjeto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorContrato)
+        </dt>
+
+        <dd>
+            R$ @Html.DisplayFor(model => model.ValorContrato)
+        </dd>
+
+    </dl>
+</div>
+
+<!--
+    
+Espaço para introduzir uma tabela com as atividades pertinentes ao projeto especificado. 
+No entanto, como as atividades não estão sendo cadastradas diretamente na tela de cadastro do projeto, não foi implementada a tabela.
+Mas a tabela pode ser visualizada na Index do repositório Atividade.
+-->
+
+
+<hr />
+
+<p>
+    <button class="btn btn-default">@Html.ActionLink("Editar", "Editar", new { id = Model.IdProjeto })</button> |
+    <button class="btn btn-default">@Html.ActionLink("Voltar", "Index")</button>
+</p>
+
+<style>
+
+    dl dd {
+        color: black;
+    }
+
+    dl dd {
+        text-align: left;
+    }
+
+    .tabela {
+        width: 850px;
+        height: 230px;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 5px auto 0px auto;
+        border: 1px solid red;
+    }
+</style>
